@@ -37,8 +37,8 @@ namespace WeatherWrapperAPI.Services
 
                     var options = new DistributedCacheEntryOptions
                     {
-                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30),
-                        SlidingExpiration = TimeSpan.FromMinutes(5)
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(12),
+                        SlidingExpiration = TimeSpan.FromMinutes(30)
                     };
 
                     await _cache.SetStringAsync(cacheKey, json, options);
